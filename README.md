@@ -1,4 +1,4 @@
-YAHTZEE
+YAHTZEE by Husain and Faisal
 
 Plan:
 * Player Class (Score sheets) - Keep track of the points and the categories that were used. - 
