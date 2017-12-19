@@ -49,8 +49,10 @@ class hand:
 			smallStraight()
 		elif choice == "Large Straight"
 			largeStraight()
-		elif choice =="Yahtzee"
+		elif choice == "Yahtzee"
 			yahtzee()
+		elif choice == "chance"
+			chance()
 
 	def upperSection(self, value):
 		num = hand.count (value)
