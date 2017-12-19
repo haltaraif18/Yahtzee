@@ -16,9 +16,9 @@ class hand:
 #This method allows the player to select what dices they want to keep so they can roll the other dices to roll in order to get a better score. 
 #Sends the information to hand.roll.
 	def selectDice(self, list): 
-		list = input('select the dice position you would like to roll again. Do not select the dice you want to keep: ')
-		list = list.split(",")
-		for i in list:
+		hand = input('select the dice position you would like to roll again. Do not select the dice you want to keep: ')
+		hand = list.split(",")
+		for i in hand:
 			intversion = int(i)
 			die[intversion-1] = random.randrange(1,7)
 
@@ -26,15 +26,26 @@ class hand:
 
 #Arguably the most important method of them all. This method keeps helps the player select a category such as full house, ones or twos etc. 
 #Then it sends the information ot player.points and player.category so score adjustment can be made. Sub-functions could help here.
-	def selectCategory(self, choice):
-		if choice == "threes":
-			threes()
+	def selectCategory(self, choice, score):
+		if choice == "sixes":
+			upperSection(6)
+		elif choice == "fives":
+			upperSection(5)
+		elif choice == "fours":
+			upperSection(4)
+		elif choice == "threes":
+			upperSection(3)
+		elif choice == "twos":
+			upperSection(2)
+		elif choice == "ones":
+			upperSection(1)
 
-	def threes(self):
-		# determine if the user has 3s
-			#if they do, what is their score
-		# if not, take 0 for the score
-		# mark 3s as taken  
+	def upperSection(self, value):
+		num = list.count (value)
+		tempScore = num * value
+		overallScore += num * value
+
+
 
 
 
