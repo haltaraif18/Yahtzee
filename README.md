@@ -10,7 +10,7 @@ Plan:
   * **hand.roll** - This class has 5 dices. Numbered 1 through five. This method rolls 5 dices on the first roll, then receives information from hand.selectDice to know what dices to roll on the subsequent rolls.
 * Main code - Runs all the classes smoothly. 
 
-* Faisal will work on the player class
-* Hussain will work on the hand class
+* Faisal will work on the hand class
+* Hussain will work on the player class
 * The main code will be done together
 
