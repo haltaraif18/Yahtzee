@@ -54,6 +54,7 @@ class hand:
 		elif choice == "chance"
 			chance()
 
+
 	def upperSection(self, value):
 		num = hand.count (value)
 		tempScore = num * value
@@ -68,9 +69,7 @@ class hand:
 			tempScore = num * value
 			overallScore = num * value
 		else:
-			num = hand.count(value)
-			tempScore = num * value
-			overallScore = num * value
+			tempScore = 0
 
 	def FourOfKind(self, value):
 		sorted(die)
@@ -79,6 +78,8 @@ class hand:
 			num = hand.count(value)
 			tempScore = num * value
 			overallScore = num * value
+		else: 
+			tempScore = 0
 
 	def FullHouse(self):
 		sorted(die)
@@ -88,9 +89,7 @@ class hand:
 		and (hand[2]==hand[3] and hand [4]==hand[3])):
 			tempScore = 25 
 		else:
-			num = hand.count(value)
-			tempScore = num * value
-			overallScore = num * value
+			tempScore = 0
 
 	def smallStraight(self):
 		sorted(die)
@@ -100,9 +99,7 @@ class hand:
 		or (hand[1]==3 and hand[2]==4 and hand[3]==5 and hand[4]==6)):
 			tempScore = 30
 		else:
-			num = hand.count(value)
-			tempScore = num * value
-			overallScore = num * value
+			tempScore = 0
 
 	def largeStraight(self):
 		sorted(die)
@@ -110,17 +107,13 @@ class hand:
 		or (hand[0]==2 and hand[1]==3 and hand[2]==4 and hand[3]==5 and hand[4]==6)):
 			tempScore = 40
 		else:
-			num = hand.count(value)
-			tempScore = num * value
-			overallScore = num * value
+			tempScore = 0
 
 	def yahtzee(self):
 		if hand[0]==hand[1] and hand[2]==hand[1] and hand[3]==hand[2] and hand[4]==hand[3]:
 			tempScore = 50
 		else:
-			num = hand.count(value)
-			tempScore = num * value
-			overallScore = num * value
+			tempScore = 0
 
 	def chance(self):
 		sum(hand)
