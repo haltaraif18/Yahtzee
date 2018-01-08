@@ -1,4 +1,4 @@
-#This class is not exactly like it is on the README because I figured out that it is better to calculate points in hand.py. This also demonstrates flexibility that is required from a developer :)
+#This class is not exactly like it is on the original README because I figured out that it is better to calculate points in hand.py. This also demonstrates flexibility that is required from a developer :)
 import hand
 
 #Each player has its own hand instance to get the score and the categories used. 
