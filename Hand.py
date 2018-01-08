@@ -18,7 +18,7 @@ class Hand:
 				self.die[intversion-1] = random.randrange(1,7)
 		print (self.die)
 
-#This method keeps helps the player select a category such as full house, ones or twos etc. player class sends info to this function.
+#This method helps the player select a category such as full house, ones or twos etc. player class sends info to this function.
 	def selectCategory(self, choice):
 		if choice == "sixes":
 			self.upperSection(6)
