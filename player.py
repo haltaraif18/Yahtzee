@@ -19,7 +19,7 @@ class Player:
 				print("Error, you have already used this category. Please select another.")
 				self.add_category()
 			#The next elifs make sure the user selects a valid category.
-			elif category == "sixes" or category == "fives" or category == "fours" or category == "threes" or category == "twos" or category == "aces" or category == "three of a kind" or category == "four of a kind" or category == "full house" or category == "small straight" or category == "large straight" or category =="yahtzee" or category == "chance" or category == "double chance":
+			elif category == "sixes" or category == "fives" or category == "fours" or category == "threes" or category == "twos" or category == "aces" or category == "three of a kind" or category == "four of a kind" or category == "full house" or category == "small straight" or category == "large straight" or category =="yahtzee" or category == "chance" or category == "21":
 				self.hand.selectCategory(category)
 				self.categoriesUsed.append(category)
 			else:
