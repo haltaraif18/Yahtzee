@@ -26,4 +26,3 @@ class Player:
 			else:
 				print ("Error, this category does not exist.")
 				self.add_category()
-
