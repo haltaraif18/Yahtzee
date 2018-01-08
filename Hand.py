@@ -5,21 +5,17 @@ class Hand:
 		self.points = 0
 		self.die = []
 
-This method rolls 5 dices.
+#This class has 5 dices. Numbered 1 through five. This method rolls 5 dices.
 	def roll(self):
 		self.die = random.sample(range(1,7), 5)
 		print (self.die)
 
 #This method allows the player to select what dices they want to roll again to get a better score.
-	def selectDice(self):
-		hands = input("Select the dice positions (1-5) you would like to roll again. Use commas (,) to separate them. Type none if you don't want to roll: ")
-		if hands == "none":
-			return
-		else:
-			hand = hands.split(",")
-			for i in hand:
-					intversion = int(i)
-					self.die[intversion-1] = random.randrange(1,7)
+	def selectDice(self, hands):
+		hand = hands.split(",")
+		for i in hand:
+				intversion = int(i)
+				self.die[intversion-1] = random.randrange(1,7)
 		print (self.die)
 
 #This method keeps helps the player select a category such as full house, ones or twos etc. player class sends info to this function.
@@ -115,8 +111,6 @@ This method rolls 5 dices.
 #This is the custom-created category. 
 	def doubleChance(self):
 		self.points += sum(self.die) * 2
-
-
 
 
 
