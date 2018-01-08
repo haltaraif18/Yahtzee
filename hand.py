@@ -5,7 +5,7 @@ class Hand:
 		self.points = 0
 		self.die = []
 
-#This class has 5 dices. Numbered 1 through five. This method rolls 5 dices.
+#This method rolls 5 dices.
 	def roll(self):
 		self.die = random.sample(range(1,7), 5)
 		print (self.die)
