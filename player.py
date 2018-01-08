@@ -12,7 +12,7 @@ class Player:
 #The way this function works is that it checks if the category is used. If it is used, it asks the user to select another. 
 #If the category is not used, it executes the function in hand class and then appends the category in the list so it can't be used again.
 		def add_category(self):
-			category = input("select: sixes, fives, fours, threes, twos, aces, three of a kind, four of a kind, full house, small straight, large straight, yahtzee, chance or double chance? ")
+			category = input("select: sixes, fives, fours, threes, twos, aces, three of a kind, four of a kind, full house, small straight, large straight, yahtzee, chance or 21? ")
 			if len(self.categoriesUsed) == 13:
 				print("error, you have used all categories.")
 			elif category in self.categoriesUsed:
