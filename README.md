@@ -9,4 +9,4 @@ Plan:
   * **Hand.roll** - This class has 5 dices. Numbered 1 through five. This method rolls 5 dices on the first roll, then receives information from hand.selectDice to know what dices to roll on the subsequent rolls.
   This class also has all the categories (rules) of the game and a bonus category.
   The points are calculated in this class in the categories themselves and then calculated by adding directly to the player's points attribute.
-* Main code - Runs all the classes smoothly. 
+* Main code - Runs all the classes smoothly and uses the players' points to decide who wins. To elaborate, the main code creates player instances using a for loop and allows them to play the game using the methods from player and hand classes.
