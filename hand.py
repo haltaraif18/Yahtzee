@@ -47,7 +47,7 @@ class Hand:
 		elif choice == "chance":
 			self.chance()
 		elif choice == "21":
-			self.21()
+			self.twentyone()
 
 
 #The following lines of code are the categories. They are just the rules of the game.
@@ -109,7 +109,7 @@ class Hand:
 		self.points += sum(self.die)
 
 #This is the custom-created category. 
-	def 21(self):
+	def twentyone(self):
 		if sum(self.die) == 21:
 			self.points += 42
 		else:
