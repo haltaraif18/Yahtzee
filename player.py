@@ -17,7 +17,7 @@ class Player:
 				print("error, you have used all categories.")
 			elif category in self.categoriesUsed:
 				print("Error, you have already used this category. Please select another.")
-				print("Categories you have used are " + str(self.categoriesUsed) "
+				print("Categories you have used are " + str(self.categoriesUsed))
 				self.add_category()
 			#The next elifs make sure the user selects a valid category.
 			elif category == "sixes" or category == "fives" or category == "fours" or category == "threes" or category == "twos" or category == "aces" or category == "three of a kind" or category == "four of a kind" or category == "full house" or category == "small straight" or category == "large straight" or category =="yahtzee" or category == "chance" or category == "21":
