@@ -10,8 +10,3 @@ Plan:
   This class also has all the categories (rules) of the game and a bonus category.
   The points are calculated in this class in the categories themselves and then calculated by adding directly to the player's points attribute.
 * Main code - Runs all the classes smoothly. 
-
-* Faisal will work on the hand class
-* Hussain will work on the player class
-* The main code will be done together
-
