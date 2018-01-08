@@ -1,127 +1,120 @@
-import random 
+import random
 
-
-class hand:
+class Hand:
 	def __init__(self):
+		self.points = 0
+		self.die = []
 
-#This class has 5 dices. Numbered 1 through five. This method rolls 5 dices on the first roll, then receives information from hand.selectDice 
-#to know what dices to roll on the subsequent rolls.
-	def roll():
-		die = random.sample(range(1,7), 5)
+This method rolls 5 dices.
+	def roll(self):
+		self.die = random.sample(range(1,7), 5)
+		print (self.die)
 
-	
-
-			
-
-#This method allows the player to select what dices they want to keep so they can roll the other dices to roll in order to get a better score. 
-#Sends the information to hand.roll.
-	def selectDice(self, list): 
-		hand = input("select the dice position you would like to roll again. Do not select the dice you want to keep: ")
-		hand = hand.split(",")
-		for i in hand:
-			intversion = int(i)
-			die[intversion-1] = random.randrange(1,7)
-
-
-
-#Arguably the most important method of them all. This method keeps helps the player select a category such as full house, ones or twos etc. 
-#Then it sends the information ot player.points and player.category so score adjustment can be made. Sub-functions could help here.
-	def selectCategory(self, choice, score):
-		if choice == "sixes":
-			upperSection(6)
-		elif choice == "fives":
-			upperSection(5)
-		elif choice == "fours":
-			upperSection(4)
-		elif choice == "threes":
-			upperSection(3)
-		elif choice == "twos":
-			upperSection(2)
-		elif choice == "aces":
-			upperSection(1)
-		elif choice == "Three of a kind"
-			ThreeOfKind()
-		elif choice == "Four of a kind"
-			FourOfKind()
-		elif choice == "Full House"
-			FullHouse()
-		elif choice == "Small Straight"
-			smallStraight()
-		elif choice == "Large Straight"
-			largeStraight()
-		elif choice == "Yahtzee"
-			yahtzee()
-		elif choice == "chance"
-			chance()
-
-
-	def upperSection(self, value):
-		num = hand.count (value)
-		tempScore = num * value
-		overallScore += num * value
-
-	def ThreeOfKind(self, value):
-		sorted(die)
-		if (hand[0]==hand[1] and hand[2]==hand[1])
-		or (hand[1]==hand[2] and hand[3]==hand[2])
-		or (hand[2]==hand[3] and hand[4]==hand[3]):
-			num = hand.count(value)
-			tempScore = num * value
-			overallScore = num * value
+#This method allows the player to select what dices they want to roll again to get a better score.
+	def selectDice(self):
+		hands = input("Select the dice positions (1-5) you would like to roll again. Use commas (,) to separate them. Type none if you don't want to roll: ")
+		if hands == "none":
+			return
 		else:
-			tempScore = 0
+			hand = hands.split(",")
+			for i in hand:
+					intversion = int(i)
+					self.die[intversion-1] = random.randrange(1,7)
+		print (self.die)
 
-	def FourOfKind(self, value):
-		sorted(die)
-		if (hand[0]==hand[1] and hand[2]==hand[1] and hand[3]==hand[2])
-		or (hand[1]==hand[2] and hand[3]==hand[2] and hand[4]==hand[3]):
-			num = hand.count(value)
-			tempScore = num * value
-			overallScore = num * value
+#This method keeps helps the player select a category such as full house, ones or twos etc. player class sends info to this function.
+	def selectCategory(self, choice):
+		if choice == "sixes":
+			self.upperSection(6)
+		elif choice == "fives":
+			self.upperSection(5)
+		elif choice == "fours":
+			self.upperSection(4)
+		elif choice == "threes":
+			self.upperSection(3)
+		elif choice == "twos":
+			self.upperSection(2)
+		elif choice == "aces":
+			self.upperSection(1)
+		elif choice == "three of a kind":
+			self.ThreeOfKind()
+		elif choice == "four of a kind":
+			self.FourOfKind()
+		elif choice == "full house":
+			self.FullHouse()
+		elif choice == "small straight":
+			self.smallStraight()
+		elif choice == "large straight":
+			self.largeStraight()
+		elif choice == "yahtzee":
+			self.yahtzee()
+		elif choice == "chance":
+			self.chance()
+		elif choice == "double chance":
+			self.doubleChance()
+
+
+#The following lines of code are the categories. They are just the rules of the game.
+#They also add points to our points variable depending on the used category.
+	def upperSection(self, value):
+		num = self.die.count (value)
+		self.points += (num * value)
+
+	def ThreeOfKind(self):
+		self.die.sort()
+		if any ( [self.die[0]==self.die[1] and self.die[2]==self.die[1], 
+			self.die[1]==self.die[2] and self.die[3]==self.die[2], 
+			self.die[2]==self.die[3] and self.die[4]==self.die[3] ]):
+			self.points += sum(self.die)
+		else:
+			self.points += 0
+
+	def FourOfKind(self):
+		self.die.sort()
+		if any([self.die[0]==self.die[1] and self.die[2]==self.die[1] and self.die[3]==self.die[2],
+		self.die[1]==self.die[2] and self.die[3]==self.die[2] and self.die[4]==self.die[3]]):
+			self.points += sum(self.die)
 		else: 
-			tempScore = 0
+			self.points += 0
 
 	def FullHouse(self):
-		sorted(die)
-		if ((hand[0]==hand[1] and hand[2]==hand[1])
-		and(hand[3]==hand[4])) 
-		or ((hand[0]==hand[1])
-		and (hand[2]==hand[3] and hand [4]==hand[3])):
-			tempScore = 25 
+		self.die.sort()
+		if any ([self.die[0]==self.die[1] and self.die[2]==self.die[1] and self.die[3]==self.die[4],
+		self.die[0]==self.die[1] and self.die[2]==self.die[3] and self.die [4]==self.die[3]]):
+			self.points += 25 
 		else:
-			tempScore = 0
+			self.points += 0
 
 	def smallStraight(self):
-		sorted(die)
-		if ((hand[0]==1 and hand[1]==2 and hand[2]==3 hand[3]==4)
-		or (hand[1]==2 and hand[2]==3 and hand[3]==4 and hand[4]==5)
-		or (hand[0]==2 and hand[1]==3 and hand[2]==4 and hand[3]==5)
-		or (hand[1]==3 and hand[2]==4 and hand[3]==5 and hand[4]==6)):
-			tempScore = 30
+		self.die.sort()
+		if any ([self.die[0]== 1 and self.die[1]==2 and self.die[2]==3 and self.die[3]==4,
+		self.die[1]==2 and self.die[2]==3 and self.die[3]==4 and self.die[4]==5,
+		self.die[0]==2 and self.die[1]==3 and self.die[2]==4 and self.die[3]==5,
+		self.die[1]==3 and self.die[2]==4 and self.die[3]==5 and self.die[4]==6]):
+			self.points += 30
 		else:
-			tempScore = 0
+			self.points += 0
 
 	def largeStraight(self):
-		sorted(die)
-		if ((hand[0]==1 and hand[1]==2 and hand[2]==3 and hand[3]==4 and hand[4]==5)
-		or (hand[0]==2 and hand[1]==3 and hand[2]==4 and hand[3]==5 and hand[4]==6)):
-			tempScore = 40
+		self.die.sort()
+		if any([self.die[0]==1 and self.die[1]==2 and self.die[2]==3 and self.die[3]==4 and self.die[4]==5,
+		self.die[0]==2 and self.die[1]==3 and self.die[2]==4 and self.die[3]==5 and self.die[4]==6]):
+			self.points += 40
 		else:
-			tempScore = 0
+			self.points += 0
 
 	def yahtzee(self):
-		if hand[0]==hand[1] and hand[2]==hand[1] and hand[3]==hand[2] and hand[4]==hand[3]:
-			tempScore = 50
+		if self.die[0]==self.die[1] and self.die[2]==self.die[1] and self.die[3]==self.die[2] and self.die[4]==self.die[3]:
+			self.points += 50
 		else:
-			tempScore = 0
+			self.points += 0
 
 	def chance(self):
-		sum(hand)
+		self.points += sum(self.die)
 
-
-
-
-
+#This is the custom-created category. 
+	def doubleChance(self):
+		self.points += sum(self.die) * 2
 
 
 
