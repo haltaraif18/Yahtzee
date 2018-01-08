@@ -46,8 +46,8 @@ class Hand:
 			self.yahtzee()
 		elif choice == "chance":
 			self.chance()
-		elif choice == "double chance":
-			self.doubleChance()
+		elif choice == "21":
+			self.21()
 
 
 #The following lines of code are the categories. They are just the rules of the game.
@@ -109,9 +109,11 @@ class Hand:
 		self.points += sum(self.die)
 
 #This is the custom-created category. 
-	def doubleChance(self):
-		self.points += sum(self.die) * 2
-
+	def 21(self):
+		if sum(self.die) == 21:
+			self.points += 42
+		else:
+			self.points += 0
 
 
 
