@@ -16,11 +16,15 @@ for x in range(numOfPlayers):
 	gamers[x] = player.Player()
 
 #This outer loop makes sure only 13 rounds are played. The inner loop gives changes turns for players smoothly.
-for y in range (0,14):
+for y in range (0,2):
 	for x in range (numOfPlayers):
 		gamers[x].hand.roll()
 		for z in range (0,2):
-			gamers[x].hand.selectDice()
+			hands = input("Select the dice positions (1-5) you would like to roll again. Use commas (,) to separate them. Type none if you don't want to roll: ")
+			if hands == "none":
+				break
+			else:
+				gamers[x].hand.selectDice(hands)
 		gamers[x].add_category()
 		print ("Player " + str(x) + " score is " + str(gamers[x].hand.points))
 
